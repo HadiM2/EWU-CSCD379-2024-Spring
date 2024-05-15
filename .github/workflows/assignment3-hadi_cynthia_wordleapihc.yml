@@ -9,7 +9,9 @@ on:
       - Assignment3-Hadi_Cynthia
     paths:
       - Wordle.Api/**
-
+  pull_requests:
+    branches:
+      - Assignment3-Hadi_Cynthia
   workflow_dispatch:
 
 jobs:
