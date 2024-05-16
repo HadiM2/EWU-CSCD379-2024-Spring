@@ -20,11 +20,10 @@
         <v-divider></v-divider>
         <v-table>
           <tbody>
-            <tr v-for="(player, index) in leaderboard" :key="index">
-              <td class="text-left">{{ player.id }}</td>
-              <td class="text-center">{{ player.name }}</td>
-              <td class="text-center">{{ player.averageGuesses }}</td>
-              <td class="text-center">{{ player.plays }}</td>
+            <tr v-for="player in topTen" :key="player.name">
+              <td class="text-center">{{ player.Name }}</td>
+              <td class="text-center">{{ player.GameCount }}</td>
+              <td class="text-center">{{ player.AverageAttempts }}</td>
             </tr>
           </tbody>
         </v-table>
@@ -33,12 +32,24 @@
   </v-container>
 </template>
 
-<script setup>
-//SAMPLE DATA FOR NOW :(
-const leaderboard = ref([
-  {id: 1, name: 'NPC1', averageGuesses: 5, plays: 10 },
-  {id : 2, name: 'NPC2', averageGuesses: 4, plays: 15 },
-  {id : 3,name: 'NPC3', averageGuesses: 6, plays: 8 },
+<script setup lang="ts">
+import { ref } from 'vue';
+import Axios from 'axios';
 
-]);
+interface PlayerInfo{
+  name: string;
+  gameCount: number;
+  averageAttempts: number;
+};
+
+const topTen = ref<PlayerInfo[]>([]);
+
+Axios.get('/leaderboard/GetScores')
+  .then(response => {
+    topTenScores.value = response.data;
+  })
+  .catch(error => {
+    console.log(error);
+  });
+
 </script>
