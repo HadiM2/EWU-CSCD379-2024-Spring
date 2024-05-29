@@ -21,6 +21,6 @@
   "devDependencies": {
     "vite-plugin-vuetify": "^2.0.3",
     "vitest-environment-nuxt": "^1.0.0",
-    "vuetify": "^3.6.7"
+    "vuetify": "^3.6.8"
   }
 }

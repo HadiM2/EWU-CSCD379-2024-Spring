@@ -1,57 +1,39 @@
 <template>
-  <v-app >
-    <v-main>
-      <v-container>
-        <v-card >
-          <v-card-title class="banner">
-            <h1 class="title">CountryCrush</h1>
-            <div class="center">
-              <p class="content text-md-center">
-                Howdy, Welcome to Country Crush:
-                <br> Where you can yeehaw your way to love with a simple swipe 🌽👨‍🌾💘👩‍🌾🌽
-              </p>
-            </div>
-          </v-card-title>
-        </v-card>
-      </v-container>
-    </v-main>
-  </v-app>
+  <NuxtLayout>
+    <v-app>
+      <v-app-bar color="primary" :elevation="2">
+        <v-app-bar-title @click="router.push('/')" style="cursor: pointer">
+          CountryCrush
+          <v-icon @click="router.push('/')" prepend-icon="mdi-greenhouse">  </v-icon>
+        </v-app-bar-title> 
+      </v-app-bar>
+      
+      
+      
+      <v-main>
+        <NuxtPage />
+      </v-main>
+    </v-app>
+  </NuxtLayout>
 </template>
 
 <script setup lang="ts">
-import { useTheme } from 'vuetify';
-import { onMounted } from 'vue';
-import nuxtStorage from 'nuxt-storage';
+import { useTheme } from "vuetify";
+import nuxtStorage from "nuxt-storage";
+import { ref } from "vue";
+import { useRouter } from "vue-router";
 
 const theme = useTheme();
+const settingsDialog = ref(false);
+
 onMounted(() => {
   var defaultTheme = nuxtStorage.localStorage.getData("theme");
-  theme.global.name.value = defaultTheme ?? "light"; 
+  theme.global.name.value = defaultTheme ?? "overall";
 });
+
 </script>
 
-<style scoped>
-.center {
-  margin: auto;
-  width: 50%;
-  padding: 10px;
-}
+<style>
 
-.content {
-  font-size: large;
-}
-
-.title {
-  font-size: xx-large;
-  text-align: center;
-  border: 1px;
-  padding: 10px;
-}
-
-.banner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-}
 </style>
+

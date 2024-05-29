@@ -7,14 +7,15 @@ import { createVuetify } from 'vuetify';
 export default defineNuxtPlugin((app) => {
   const vuetify = createVuetify({
     theme: {
-      defaultTheme: 'overall', 
+      defaultTheme: 'dark', 
       themes: {
         overall: {
           dark: false,
           colors: {
             primary: "#0050cb",
             secondary: "#003079",
-            background: "#9c9ccf",
+            background: '#111928',
+            
           },
         },
         overallDark:{
