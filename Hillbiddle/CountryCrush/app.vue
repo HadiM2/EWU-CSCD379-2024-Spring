@@ -1,13 +1,14 @@
 <template>
   <NuxtLayout>
     <v-app>
+    <
       <v-app-bar color="primary" :elevation="2">
         <v-app-bar-title @click="router.push('/')" style="cursor: pointer">
           CountryCrush
           <v-icon @click="router.push('/')" prepend-icon="mdi-greenhouse">  </v-icon>
         </v-app-bar-title> 
       </v-app-bar>
-      <v-container>
+      <v-container >
               <v-btn
                 class="buttonClass"
                 @click="themeSettings('light')"
