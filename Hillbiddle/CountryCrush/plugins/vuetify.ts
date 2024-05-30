@@ -10,7 +10,7 @@ export default defineNuxtPlugin((app) => {
       defaultTheme: 'dark', 
       themes: {
         overall: {
-          dark: false,
+
           colors: {
             primary: "#0050cb",
             secondary: "#003079",
@@ -19,7 +19,7 @@ export default defineNuxtPlugin((app) => {
           },
         },
         overallDark:{
-          dark: true,
+
           colors: {
             primary: '#0050cb',
             secondary: '#003079',
@@ -27,7 +27,7 @@ export default defineNuxtPlugin((app) => {
           },
         },
         murica: {
-          dark: false,
+
           colors: {
             primary: '#0000ff',
             secondary: '#ff0000',
@@ -36,7 +36,6 @@ export default defineNuxtPlugin((app) => {
         },
         muricaDark:
         {
-          dark: true,
           colors: {
             primary: '#0000ff',
             secondary: '#ff0000',
@@ -44,7 +43,6 @@ export default defineNuxtPlugin((app) => {
           },
         },
         countryGreen: {
-          dark: false,
           colors: {
             primary: '#388E3C',
             secondary: '#8bc34a',
@@ -53,7 +51,6 @@ export default defineNuxtPlugin((app) => {
         },
         countryGreenDarkMode:
         {
-          dark: true,
           colors: {
             primary: '#388E3C',
             secondary: '#8bc34a',
@@ -61,7 +58,6 @@ export default defineNuxtPlugin((app) => {
           },
         },
         light: {
-          dark: false,
           colors: {
             primary: '#388E3C',
             secondary: '#8bc34a',
@@ -69,7 +65,6 @@ export default defineNuxtPlugin((app) => {
           },
         },
         dark: {
-          dark: true,
           colors: {
             primary: '#388E3C',
             secondary: '#8bc34a',
