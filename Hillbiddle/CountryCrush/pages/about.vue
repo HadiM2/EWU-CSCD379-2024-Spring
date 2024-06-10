@@ -1,7 +1,7 @@
 <template>
   <div class="centered-container">
     <v-card class="pd text-center custom-card" color="pink"> 
-      <v-card-title style="font-size: xx-large;">Country Crush</v-card-title>
+      <v-card-title style="font-size: xx-large; font-weight: bold; font-style: italic;">Country Crush</v-card-title>
       <v-card-text>
         Welcome to Country crush, where you can yeehaw your way to life-long loooooooove ❤️‍🔥👼🏹
         <br>
