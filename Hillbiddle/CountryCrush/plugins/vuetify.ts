@@ -14,7 +14,7 @@ export default defineNuxtPlugin((app) => {
           colors: {
             primary: "#0050cb",
             secondary: "#003079",
-            background: '#111928',
+            background: "#538bf5",
             
           },
         },
@@ -23,7 +23,7 @@ export default defineNuxtPlugin((app) => {
           colors: {
             primary: '#0050cb',
             secondary: '#003079',
-            background: '#121212',
+            background:  '#111928',
           },
         },
         murica: {
@@ -46,10 +46,10 @@ export default defineNuxtPlugin((app) => {
           colors: {
             primary: '#388E3C',
             secondary: '#8bc34a',
-            background: '#FFFFFF',
+            background: '#8bc34a',
           },
         },
-        countryGreenDarkMode:
+        countryGreenDark:
         {
           colors: {
             primary: '#388E3C',
