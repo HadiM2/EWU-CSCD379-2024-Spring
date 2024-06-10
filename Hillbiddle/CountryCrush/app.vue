@@ -3,7 +3,7 @@
 
     <v-app>
       <v-app-bar color="primary" :elevation="7" image="/public/hearts.png">
-        <v-app-bar-title style=" font-size:1.75em; font-family: 'PlayfairDisplay'" >
+        <v-app-bar-title style=" font-size:1.75em;" class="pd" >
           Country
           <v-icon>
             mdi-heart-multiple          
@@ -17,11 +17,11 @@
       <v-navigation-drawer expand-on-hover rail location="right" color="primary">
         <v-divider></v-divider>
         <v-list density="compact" nav>
-          <v-list-item prepend-icon="mdi-home" title="Home" @click="router.push('/')"/>
-          <v-list-item prepend-icon="mdi-cog-outline" title="Settings" @click="settingsDialog = true"/>
-          <v-list-item prepend-icon="mdi-help-circle" title="About" @click="router.push('/about')" />
-          <v-list-item prepend-icon="mdi-weather-night" title="Light vs Dark" @click="toggleTheme()"/>
-          <v-list-item  prepend-icon="mdi-help" title="Help"  @click="router.push('/help')" />
+          <v-list-item  class="pd" prepend-icon="mdi-home" title="Home" @click="router.push('/')"/>
+          <v-list-item   class="pd" prepend-icon="mdi-cog-outline" title="Settings" @click="settingsDialog = true"/>
+          <v-list-item   class="pd"  prepend-icon="mdi-help-circle" title="About" @click="router.push('/about')" />
+          <v-list-item   class="pd" prepend-icon="mdi-weather-night" title="Light vs Dark" @click="toggleTheme()"/>
+          <v-list-item   class="pd" prepend-icon="mdi-help" title="Help"  @click="router.push('/help')" />
         </v-list>
       </v-navigation-drawer>
 
@@ -29,21 +29,21 @@
       <v-dialog v-model="settingsDialog" max-width="500">
         <v-card style="outline-style: inset;" color="primary">
           <v-sheet color="secondary">
-            <v-card-text style="text-align: center; font-size:1.75em; font-family:'Courier New'"> Settings </v-card-text>
+            <v-card-text style="text-align: center; font-size:1.75em; color: white" class="pd"> Settings </v-card-text>
           </v-sheet>
           <v-card-text>
             <v-container>
-              <v-list-item @click="themeSettings('overall')" style="outline-style: outset; font-size:1.75em; font-family: 'Playfair Display'"   color="primary" class="text-center">overall</v-list-item>
+              <v-list-item @click="themeSettings('overall')" style="outline-style: outset; font-size:1.75em;"    color="primary" class="text-center pd">overall</v-list-item>
               &nbsp;&nbsp;&nbsp;
-              <v-list-item @click="themeSettings('overall')" style="outline-style: outset; font-size:1.75em; font-family: 'Playfair Display'" color="primary" class="text-center">overall dark</v-list-item>
+              <v-list-item @click="themeSettings('overall')" style="outline-style: outset; font-size:1.75em;"  color="primary" class="text-center pd">overall dark</v-list-item>
               &nbsp;&nbsp;&nbsp;
-              <v-list-item @click="themeSettings('overall')" style="outline-style: outset;font-size:1.75em;  font-family: 'Playfair Display'" color="primary" class="text-center">country green</v-list-item>
+              <v-list-item @click="themeSettings('overall')" style="outline-style: outset;font-size:1.75em;  "  color="primary" class="text-center pd ">country green</v-list-item>
               &nbsp;&nbsp;&nbsp;
-              <v-list-item @click="themeSettings('overall')" style="outline-style: outset; font-size:1.75em; font-family: 'Playfair Display'" color="primary" class="text-center">country green dark</v-list-item>
+              <v-list-item @click="themeSettings('overall')" style="outline-style: outset; font-size:1.75em; "  color="primary" class="text-center pd">country green dark</v-list-item>
               &nbsp;&nbsp;&nbsp;
-              <v-list-item @click="themeSettings('overall')" style="outline-style: outset; font-size:1.75em; font-family: 'Playfair Display'" color="primary" class="text-center">murica</v-list-item>
+              <v-list-item @click="themeSettings('overall')" style="outline-style: outset; font-size:1.75em; "  color="primary" class="text-center pd">murica</v-list-item>
               &nbsp;&nbsp;&nbsp;
-              <v-list-item @click="themeSettings('overall')" style="outline-style: outset; font-size:1.75em; font-family: 'Playfair Display'" color="primary" class="text-center">murica dark</v-list-item>
+              <v-list-item @click="themeSettings('overall')" style="outline-style: outset; font-size:1.75em; "  color="primary" class="text-center pd">murica dark</v-list-item>
               &nbsp;&nbsp;&nbsp;
             </v-container>
           </v-card-text>
@@ -87,9 +87,8 @@ function themeSettings(item: string) {
   margin-bottom: 10px;
 }
 
-.montserrat-font {
-  font-family: 'Montserrat', sans-serif;
-  text-align: center;
+.pd {
+  font-family: 'PlayfairDisplay';
 }
 
 </style>
