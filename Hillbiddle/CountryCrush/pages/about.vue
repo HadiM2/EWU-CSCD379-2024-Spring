@@ -14,7 +14,7 @@
                 <v-list-item-subtitle>CS Student</v-list-item-subtitle>
               </div>
               <v-avatar class="avatar-below">
-                <img src="/cyndy.jpg">
+                <img src="https://avatars.githubusercontent.com/u/129777144?v=4">
               </v-avatar>
             </div>
           </template>
@@ -27,7 +27,7 @@
                 <v-list-item-subtitle>CS Student</v-list-item-subtitle>
               </div>
               <v-avatar class="avatar-below">
-                <img src="/hadi.jpg">
+                <img src="https://avatars.githubusercontent.com/u/97601068?v=4">
               </v-avatar>
             </div>
           </template>
