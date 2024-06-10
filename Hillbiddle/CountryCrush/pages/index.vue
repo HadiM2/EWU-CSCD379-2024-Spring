@@ -1,7 +1,11 @@
 <template>
   <div ref="character" class="walking-character"></div>
   <v-divider :width="'100%'"> </v-divider>
-  Welcome!
+  <div>
+    <h1 class="pd">
+      Welcome!
+    </h1>
+  </div>
   <br><br>
 </template>
 
@@ -22,6 +26,34 @@ export default {
 </script>
 
 <style scoped>
+.pd {
+  font-family: 'PlayfairDisplay';
+}
+
+.custom-card {
+  max-width: 600px;
+  margin: auto; 
+  padding: 20px;
+}
+
+.centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.custom-list-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px; 
+}
+
+.avatar-below {
+  margin-top: 10px;
+}
+
 .walking-character {
   position: fixed;
   bottom: 0;
