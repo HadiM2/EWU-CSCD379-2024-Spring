@@ -1,112 +1,90 @@
 <template>
   <NuxtLayout>
+
     <v-app>
-    <
-      <v-app-bar color="primary" :elevation="2">
-        <v-app-bar-title @click="router.push('/')" style="cursor: pointer">
-          CountryCrush
-          <v-icon @click="router.push('/')" prepend-icon="mdi-greenhouse">  </v-icon>
-        </v-app-bar-title> 
+      <v-app-bar color="primary" :elevation="7" image="/public/hearts.png">
+        <v-app-bar-title >
+          Country
+          <v-icon>
+            mdi-heart-multiple          
+          </v-icon>
+          Crush
+        </v-app-bar-title>
       </v-app-bar>
-      <v-container >
-              <v-btn
-                class="buttonClass"
-                @click="themeSettings('light')"
-                style="outline-style: outset"
-                color="primary"
-                >Light Mode</v-btn
-              >
+
+      <HelpDialog v-model="showHelpDialog" />
+
+      <v-navigation-drawer expand-on-hover rail location="right">
+        <v-divider></v-divider>
+        <v-list density="compact" nav>
+          <v-list-item prepend-icon="mdi-home" title="Home" />
+          <v-list-item prepend-icon="mdi-cog-outline" title="Settings" />
+          <v-list-item prepend-icon="mdi-help-circle" title="About" />
+          <v-list-item prepend-icon="mdi-weather-night" title="Light vs Dark"/>
+          <v-list-item  prepend-icon="mdi-help" title="Help"  />
+        </v-list>
+      </v-navigation-drawer>
+
+      <!-- Settings Dialog -->
+      <v-dialog v-model="settingsDialog" max-width="500">
+        <v-card style="outline-style: inset;" color="primary">
+          <v-sheet color="secondary">
+            <v-card-text style="text-align: center; font-size:1.75em; font-family:'Courier New'"> Settings </v-card-text>
+          </v-sheet>
+          <v-card-text>
+            <v-container>
+              <v-btn class="buttonClass"  color="primary">Light Mode</v-btn>
               &nbsp;&nbsp;&nbsp;
-              <v-btn
-                class="buttonClass"
-                @click="themeSettings('dark')"
-                style="outline-style: outset"
-                color="primary"
-                >Dark Mode</v-btn
-              >
+              <v-btn class="buttonClass" color="primary">Dark Mode</v-btn>
               &nbsp;&nbsp;&nbsp;
-              <v-btn
-                class="buttonClass"
-                @click="themeSettings('overall')"
-                style="outline-style: outset"
-                color="primary"
-                >Overall</v-btn
-              >
+              <v-btn class="buttonClass"  color="primary">Business Casual</v-btn>
               &nbsp;&nbsp;&nbsp;
-              <v-btn
-                class="buttonClass"
-                @click="themeSettings('overallDark')"
-                style="outline-style: outset"
-                color="primary"
-                >OverallDark</v-btn
-              >
+              <v-btn class="buttonClass" color="primary">Business Casual -- DARK</v-btn>
               &nbsp;&nbsp;&nbsp;
-              <v-btn
-                class="buttonClass"
-                @click="themeSettings('countryGreen')"
-                style="outline-style: outset"
-                color="primary"
-                >Country</v-btn
-              >
+              <v-btn class="buttonClass"  color="primary">Luigi</v-btn>
               &nbsp;&nbsp;&nbsp;
-              <v-btn
-                class="buttonClass"
-                @click="themeSettings('countryGreenDark')"
-                style="outline-style: outset"
-                color="primary"
-                >CountryDark</v-btn
-              >
+              <v-btn class="buttonClass"  color="primary">Mario</v-btn>
               &nbsp;&nbsp;&nbsp;
-              <v-btn
-                class="buttonClass"
-                @click="themeSettings('murica')"
-                style="outline-style: outset"
-                color="primary"
-                >Murica</v-btn
-              >
+              <v-btn class="buttonClass"  color="primary">Hadi's Choice</v-btn>
               &nbsp;&nbsp;&nbsp;
-              <v-btn
-                class="buttonClass"
-                @click="themeSettings('muricaDark')"
-                style="outline-style: outset"
-                color="primary"
-                >Murica DARK</v-btn
-              >
+              <v-btn class="buttonClass"  color="primary">Hadi's Choice -- DARK</v-btn>
             </v-container>
-      
-      
+          </v-card-text>
+        </v-card>
+      </v-dialog>
+
+
       <v-main>
         <NuxtPage />
       </v-main>
+
     </v-app>
   </NuxtLayout>
 </template>
 
 <script setup lang="ts">
 import { useTheme } from "vuetify";
-import nuxtStorage from "nuxt-storage";
+import nuxtStorage from 'nuxt-storage';
 import { ref } from "vue";
-import { useRouter } from "vue-router";
-
-const dialogBox = ref<boolean>(true);
-const usersNameInput = ref<string>("");
 const router = useRouter();
 const theme = useTheme();
 const showHelpDialog = ref(false);
 const settingsDialog = ref(false);
-
+const wordEngineDialog = ref(false);
 onMounted(() => {
-  var defaultTheme = nuxtStorage.localStorage.getData("theme");
-  theme.global.name.value = defaultTheme ?? "dark";
 });
-
+function toggleTheme() {
+}
 function themeSettings(item: string) {
   theme.global.name.value = item;
-  nuxtStorage.localStorage.setData("themes", theme.global.name.value);
+
 }
 </script>
-
 <style>
-
+.buttonClass{
+  display: flex;
+  justify-content: center;
+  border: 2px;
+  margin-bottom: 10px;
+}
 </style>
-
