@@ -3,10 +3,10 @@
 
     <v-app>
       <v-app-bar color="primary" :elevation="7" image="/public/hearts.png">
-        <v-app-bar-title style=" font-size:1.75em;" class="pd" >
+        <v-app-bar-title style="font-size:1.75em;" class="pd">
           Country
           <v-icon>
-            mdi-heart-multiple          
+            mdi-heart-multiple
           </v-icon>
           Crush
         </v-app-bar-title>
@@ -17,15 +17,14 @@
       <v-navigation-drawer expand-on-hover rail location="right" color="primary">
         <v-divider></v-divider>
         <v-list density="compact" nav>
-          <v-list-item  class="pd" prepend-icon="mdi-home" title="Home" @click="router.push('/')"/>
-          <v-list-item   class="pd" prepend-icon="mdi-cog-outline" title="Settings" @click="settingsDialog = true"/>
-          <v-list-item   class="pd"  prepend-icon="mdi-help-circle" title="About" @click="router.push('/about')" />
-          <v-list-item   class="pd" prepend-icon="mdi-weather-night" title="Light vs Dark" @click="toggleTheme()"/>
-          <v-list-item   class="pd" prepend-icon="mdi-help" title="Help"  @click="router.push('/help')" />
+          <v-list-item class="pd" prepend-icon="mdi-home" title="Home" @click="router.push('/')"/>
+          <v-list-item class="pd" prepend-icon="mdi-cog-outline" title="Settings" @click="settingsDialog = true"/>
+          <v-list-item class="pd" prepend-icon="mdi-help-circle" title="About" @click="router.push('/about')" />
+          <v-list-item class="pd" prepend-icon="mdi-weather-night" title="Light or Dark" @click="toggleTheme()"/>
+          <v-list-item class="pd" prepend-icon="mdi-help" title="Help"  @click="router.push('/help')" />
         </v-list>
       </v-navigation-drawer>
 
-      <!-- Settings Dialog -->
       <v-dialog v-model="settingsDialog" max-width="500">
         <v-card style="outline-style: inset;" color="primary">
           <v-sheet color="secondary">
@@ -50,7 +49,6 @@
         </v-card>
       </v-dialog>
 
-
       <v-main>
         <NuxtPage />
       </v-main>
@@ -59,28 +57,45 @@
   </NuxtLayout>
 </template>
 
-<script setup lang="ts">
-import { useTheme } from "vuetify";
+<script lang="ts" setup>
+import { ref, watch } from 'vue';
+import { useRouter } from 'vue-router';
+import { useTheme } from 'vuetify';
 import nuxtStorage from 'nuxt-storage';
-import { ref } from "vue";
+
 const router = useRouter();
 const theme = useTheme();
 const showHelpDialog = ref(false);
 const settingsDialog = ref(false);
-const wordEngineDialog = ref(false);
-onMounted(() => {
-});
+
+const isDarkMode = ref(theme.global.name.value.includes('Dark'));
+
 function toggleTheme() {
-  theme.global.name.value = theme.global.name.value === "light" ? "dark" : "light";
   nuxtStorage.localStorage.setData("theme", theme.global.name.value);
+  if (isDarkMode.value) {
+    theme.global.name.value = theme.global.name.value.replace('Dark', '');
+    console.log(theme.global.name.value)
+  } else {
+    if (theme.global.name.value.includes('Dark')) {
+      theme.global.name.value = theme.global.name.value.replace('Dark', 'Dark');
+    } else {
+      theme.global.name.value += 'Dark';
+    }
+  }
+  isDarkMode.value = !isDarkMode.value;
+  nuxtStorage.localStorage.setData('theme', theme.global.name.value);
 }
+
 function themeSettings(item: string) {
   theme.global.name.value = item;
-
+  isDarkMode.value = item.includes('Dark');
+  nuxtStorage.localStorage.setData('theme', item);
 }
+
 </script>
+
 <style>
-.buttonClass{
+.buttonClass {
   display: flex;
   justify-content: center;
   border: 2px;
@@ -90,5 +105,4 @@ function themeSettings(item: string) {
 .pd {
   font-family: 'PlayfairDisplay';
 }
-
 </style>
