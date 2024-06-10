@@ -71,7 +71,7 @@ const settingsDialog = ref(false);
 const isDarkMode = ref(theme.global.name.value.includes('Dark'));
 
 function toggleTheme() {
-  nuxtStorage.localStorage.setData("theme", theme.global.name.value);
+  
   if (isDarkMode.value) {
     theme.global.name.value = theme.global.name.value.replace('Dark', '');
     console.log(theme.global.name.value)
