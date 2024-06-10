@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-card class="pd text-center" color="primary"> 
+    <v-card class="pd text-center" color="pink"> 
       <v-card-title style="font-size: xx-large;">Country Crush</v-card-title>
       <v-card-text>
         Welcome to Country crush, where you can yeehaw your way to life-long loooooooove ❤️‍🔥👼🏹
@@ -32,14 +32,20 @@
             </div>
           </template>
         </v-list-item>
-        For our final, we're keeping the hillbilly theme. Our site is simple-like what you see? Check mark. Not so much? X. 
+        We are currently students learning .NET and have been given the task to complete these 
+        requirements: 
+        <br><br>
+        *Must use Vue/Vuetify/Typescript front end <br>
+        *Must use ASP.NET back end <br>
+        *Must use a SQL database with Entity Framework <br>
+        <br>
+        For our final, we're keeping the hillbilly theme. We wanted to make something fun and as we were brainstorming Hadi thought-Hillbilly match making.
+        <br>
+        Our site is simple-like what you see? ✅ Not so much? ❌
         <br>
         We will keep you updated with more and more matches until you find your one. 
         <br>
         Let us know what you think!
-
-       
-
       </v-card-text>
     </v-card>
   </div>
