@@ -35,9 +35,10 @@
         For our final, we're keeping the hillbilly theme. Our site is simple-like what you see? Check mark. Not so much? X. 
         <br>
         We will keep you updated with more and more matches until you find your one. 
+        <br>
         Let us know what you think!
 
-        giardia 
+       
 
       </v-card-text>
     </v-card>
