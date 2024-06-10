@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <v-card class="pd text-center" color="pink"> 
+  <div class="centered-container">
+    <v-card class="pd text-center custom-card" color="pink"> 
       <v-card-title style="font-size: xx-large;">Country Crush</v-card-title>
       <v-card-text>
         Welcome to Country crush, where you can yeehaw your way to life-long loooooooove ❤️‍🔥👼🏹
@@ -59,15 +59,27 @@
   font-family: 'PlayfairDisplay';
 }
 
+.custom-card {
+  max-width: 600px;
+  margin: auto; 
+  padding: 20px;
+}
+
+.centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
 .custom-list-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 10px; /* Optional: To add some spacing above the list item */
+  margin-top: 10px; 
 }
 
 .avatar-below {
   margin-top: 10px;
 }
-
 </style>

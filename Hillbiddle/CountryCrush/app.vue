@@ -35,15 +35,15 @@
             <v-container>
               <v-list-item @click="themeSettings('overall')" style="outline-style: outset; font-size:1.75em;"    color="primary" class="text-center pd">overall</v-list-item>
               &nbsp;&nbsp;&nbsp;
-              <v-list-item @click="themeSettings('overall')" style="outline-style: outset; font-size:1.75em;"  color="primary" class="text-center pd">overall dark</v-list-item>
+              <v-list-item @click="themeSettings('overallDark')" style="outline-style: outset; font-size:1.75em;"  color="primary" class="text-center pd">overall dark</v-list-item>
               &nbsp;&nbsp;&nbsp;
-              <v-list-item @click="themeSettings('overall')" style="outline-style: outset;font-size:1.75em;  "  color="primary" class="text-center pd ">country green</v-list-item>
+              <v-list-item @click="themeSettings('countryGreen')" style="outline-style: outset;font-size:1.75em;  "  color="primary" class="text-center pd ">country green</v-list-item>
               &nbsp;&nbsp;&nbsp;
-              <v-list-item @click="themeSettings('overall')" style="outline-style: outset; font-size:1.75em; "  color="primary" class="text-center pd">country green dark</v-list-item>
+              <v-list-item @click="themeSettings('countryGreenDark')" style="outline-style: outset; font-size:1.75em; "  color="primary" class="text-center pd">country green dark</v-list-item>
               &nbsp;&nbsp;&nbsp;
-              <v-list-item @click="themeSettings('overall')" style="outline-style: outset; font-size:1.75em; "  color="primary" class="text-center pd">murica</v-list-item>
+              <v-list-item @click="themeSettings('murica')" style="outline-style: outset; font-size:1.75em; "  color="primary" class="text-center pd">murica</v-list-item>
               &nbsp;&nbsp;&nbsp;
-              <v-list-item @click="themeSettings('overall')" style="outline-style: outset; font-size:1.75em; "  color="primary" class="text-center pd">murica dark</v-list-item>
+              <v-list-item @click="themeSettings('muricaDark')" style="outline-style: outset; font-size:1.75em; "  color="primary" class="text-center pd">murica dark</v-list-item>
               &nbsp;&nbsp;&nbsp;
             </v-container>
           </v-card-text>
