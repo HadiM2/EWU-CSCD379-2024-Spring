@@ -3,7 +3,7 @@
 
     <v-app>
       <v-app-bar color="primary" :elevation="7" image="/public/hearts.png">
-        <v-app-bar-title style="font-size:1.75em;" class="pd">
+        <v-app-bar-title style="font-size:1.75em;" class="pd" @click="router.push('/')">
           Country
           <v-icon>
             mdi-heart-multiple
