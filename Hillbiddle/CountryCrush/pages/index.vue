@@ -7,6 +7,16 @@
     </h1>
   </div>
   <br><br>
+  <v-container class="d-flex justify-center align-center;">
+    <div class="d-flex justify-center align-center; image-container" >
+      <v-img
+        :height="computedImageHeight"
+        :width="computedImageWidth"
+        src="../public/landingpage-1.png"
+      >
+      </v-img>
+    </div>
+  </v-container>
 </template>
 
 <script>
