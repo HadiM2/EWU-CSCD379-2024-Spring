@@ -40,8 +40,8 @@ const computedImageWidth = computed(() => {
   display: flex;
   justify-content: center;
   padding: 20px;
-  background-color: #8747ff21;
-  color: rgb(19, 81, 161);/*blanchedalmond*/
+  background-color: #ff47c821;
+  color: rgb(161, 19, 19);/*blanchedalmond*/
   font-size: 24px;
   transform-origin: center center;
   animation: ban 2s infinite;
@@ -53,8 +53,8 @@ const computedImageWidth = computed(() => {
   padding-top: 20px;
   padding-bottom: 20px;
   padding-inline-start: 8%;
-  background-color: #8747ff21;
-  color: rgb(19, 81, 161);/*blanchedalmond*/
+  background-color: #ff47c821;
+  color: rgb(161, 19, 19);/*blanchedalmond*/
   font-size: 24px;
   transform-origin: center center;
   animation: ban 2s infinite;
@@ -71,9 +71,9 @@ const computedImageWidth = computed(() => {
       drop-shadow(0 0 30px peru);
   }
   25% {
-    filter: drop-shadow(-30px 0px 30px rgb(129, 197, 4))
+    filter: drop-shadow(-30px 0px 30px rgb(197, 4, 4))
       drop-shadow(0 10px 10px purple)
-      drop-shadow(30px 0px 30px rgb(1, 156, 228));
+      drop-shadow(30px 0px 30px rgb(228, 1, 171));
   }
 }
 @keyframes classicPulse {
@@ -89,13 +89,13 @@ const computedImageWidth = computed(() => {
 @keyframes classicButton {
   0%,
   100% {
-    filter: drop-shadow(0 0 5px blue) drop-shadow(0 0 10px blue)
-      drop-shadow(0 0 15px blue);
+    filter: drop-shadow(0 0 5px rgb(255, 0, 0)) drop-shadow(0 0 10px rgb(255, 0, 0))
+      drop-shadow(0 0 15px rgb(255, 0, 0));
     color: blur();
   }
   50% {
-    filter: drop-shadow(0 0 5px blue) drop-shadow(0 0 10px blue)
-      drop-shadow(0 0 15px blue);
+    filter: drop-shadow(0 0 5px rgb(255, 0, 179)) drop-shadow(0 0 10px rgb(255, 0, 149))
+      drop-shadow(0 0 15px rgb(255, 0, 221));
     color: blur();
   }
 }

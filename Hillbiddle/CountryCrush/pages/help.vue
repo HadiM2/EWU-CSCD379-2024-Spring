@@ -6,7 +6,7 @@
           <header style="font-size: xx-large; font-weight: bold; font-style: italic;" class="pd">How it works:</header>
         </v-card-text>
       </v-sheet>
-      <v-card-text style="text-align: center; font-size: large" class="pd">
+      <v-card-text style="color: white; text-align: center; font-size: large" class="pd">
           *If you like what you see: ✅<br> We'll give you their details and you can take it to the next step!
           <br><br>
           *Not so much?: ❌<br> We'll keep moving forward until you find your match!<br>
