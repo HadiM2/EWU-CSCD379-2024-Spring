@@ -3,6 +3,7 @@
 
     <v-app>
       <v-app-bar color="primary" :elevation="7" image="/public/hearts.png">
+        <v-toolbar-title class="d-flex align-center justify-center" >
         <v-app-bar-title style="font-size:1.75em; cursor: pointer" class="pd" @click="router.push('/')">
           Country
           <v-icon>
@@ -10,6 +11,7 @@
           </v-icon>
           Crush
         </v-app-bar-title>
+      </v-toolbar-title>
       </v-app-bar>
 
       <HelpDialog v-model="showHelpDialog" />
