@@ -6,7 +6,7 @@
     </h1>
   </div>
   <br><br>
-  <v-container class="d-flex justify-center align-center;">
+  <v-container class="d-flex justify-center align-center">
     <div class="d-flex justify-center align-center image-container">
       <v-img
         :height="computedImageHeight"
@@ -29,7 +29,6 @@
   </v-container>
   <div ref="girl" class="walking-girl"></div>
   <div ref="boy" class="walking-boy"></div>
-  <v-divider :width="'100%'"> </v-divider>
 </v-dialog>
 </template>
 
