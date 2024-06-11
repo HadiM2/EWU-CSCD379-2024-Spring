@@ -1,25 +1,3 @@
-<script setup lang="ts">
-import { ref, computed } from 'vue';
-import { useDisplay } from "vuetify";
-const display = useDisplay();
-
-
-const cardWidth = ref('100%');
-
-const computedImageHeight = computed(() => {
-  if (display.mdAndUp) return 625;
-  if (display.smAndDown) return 300;
-  return 400;
-});
-
-const computedImageWidth = computed(() => {
-  if (display.mdAndUp) return 1800;
-  if (display.smAndDown) return '100%';
-  return '100%';
-});
-</script>
-
-<style>
 .index {
   width: 100%;
   justify-content: center;
@@ -41,11 +19,10 @@ const computedImageWidth = computed(() => {
   justify-content: center;
   padding: 20px;
   background-color: #8747ff21;
-  color: rgb(19, 81, 161);/*blanchedalmond*/
+  color: rgb(19, 81, 161); /*blanchedalmond*/
   font-size: 24px;
   transform-origin: center center;
   animation: ban 2s infinite;
-  
 }
 .bannerSmall {
   padding-right: 20px;
@@ -54,7 +31,7 @@ const computedImageWidth = computed(() => {
   padding-bottom: 20px;
   padding-inline-start: 8%;
   background-color: #8747ff21;
-  color: rgb(19, 81, 161);/*blanchedalmond*/
+  color: rgb(19, 81, 161); /*blanchedalmond*/
   font-size: 24px;
   transform-origin: center center;
   animation: ban 2s infinite;
@@ -129,4 +106,3 @@ const computedImageWidth = computed(() => {
     font-size: 2vw; /* Adjust font size for larger screens */
   }
 }
-</style>
