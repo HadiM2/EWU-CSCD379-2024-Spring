@@ -1,7 +1,8 @@
 <template>
+  <v-dialog v-model="modelValue" max-width="500" >
   <div>
     <h1 class="pd d-flex justify-center align-center" style="color: white">
-      Welcome Partner!
+      Howdy Partner!
     </h1>
   </div>
   <br><br>
@@ -18,20 +19,27 @@
   <div>
     <br>
     <h2 class="pd d-flex justify-center align-center" style="color: white">
-      YEEHAW! Click below to start matching!
+      Click below to start matching!
     </h2>
   </div>
   <v-container>
     <v-card-actions class="justify-center">
-      <v-btn style="background-color: lightpink;" color="white" to="/matching" class="text-center pd">Start Matching</v-btn>
+      <v-btn style="background-color: lightpink;" color="white" to="/matching" class="text-center pd"  @click="router.push('matching')">YEEHAW! </v-btn>
     </v-card-actions>
   </v-container>
   <div ref="girl" class="walking-girl"></div>
   <div ref="boy" class="walking-boy"></div>
   <v-divider :width="'100%'"> </v-divider>
+</v-dialog>
 </template>
 
 <script>
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+const modelValue = ref(true);
+
 export default {
   mounted() {
     this.$nextTick(() => {
