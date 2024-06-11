@@ -11,7 +11,7 @@
       <v-img
         :height="computedImageHeight"
         :width="computedImageWidth"
-        src="/CrushPictures/LandingPages/landingPage5.png"
+        src="/public/CrushPictures/crush.png"
       >
       </v-img>
     </div>
