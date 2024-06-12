@@ -24,7 +24,9 @@
   </div>
   <v-container>
     <v-card-actions class="justify-center">
-      <v-btn style="background-color: lightpink;" color="white" to="/matching" class="text-center pd"  @click="router.push('matching')">YEEHAW! </v-btn>
+     
+      <v-btn style="background-color: lightpink;" color="white" to="/matching" class="text-center pd" prepend-icon="mdi-account"
+      title="Sign in"   @click="router.push('/signIn')">Sign in </v-btn>
     </v-card-actions>
   </v-container>
   <div ref="girl" class="walking-girl"></div>
