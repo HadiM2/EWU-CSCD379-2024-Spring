@@ -82,6 +82,12 @@
             title="dislikedPage"
             @click="router.push('/DislikedPage')"
           />
+          <v-list-item
+            class="pd"
+            prepend-icon="mdi-heart"
+            title="Start Matching!"
+            @click="router.push('/index2')"
+          />
         </v-list>
       </v-navigation-drawer>
 
