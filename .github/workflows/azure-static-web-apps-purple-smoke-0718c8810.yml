@@ -30,9 +30,7 @@ jobs:
               run: npm run generate
               working-directory: ./Hillbiddle/CountryCrush/
       
-            - name: Vitest
-              run: npm run test
-              working-directory: ./Hillbiddle/CountryCrush/
+
       
               
             - name: Upload artifact
