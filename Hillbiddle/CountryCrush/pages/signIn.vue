@@ -53,18 +53,23 @@
       </v-card-text>
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn color="primary" @click="isRegisterMode ? register() : login()">
+        <v-btn color="white" @click="isRegisterMode ? register() : login()">
           {{ isRegisterMode ? 'Register' : 'Sign In' }}
         </v-btn>
-        <v-btn text @click="toggleMode()">
+        <v-btn @click="toggleMode()">
           {{ isRegisterMode ? 'Already have an account? Sign In' : "Don't have an account? Register" }}
         </v-btn>
       </v-card-actions>
     </v-card>
-    <v-snackbar v-model="snackbar.show" color="green" top>
-      {{ snackbar.message }}
-      <v-btn text @click="snackbar.show = false">Close</v-btn>
-    </v-snackbar>
+    <v-snackbar
+  v-model="snackbar.show"
+  class="pd"
+  color="green"
+  top
+  style="text-align: center"
+>
+  {{ snackbar.message }}
+</v-snackbar>
   </v-container>
 </template>
 
