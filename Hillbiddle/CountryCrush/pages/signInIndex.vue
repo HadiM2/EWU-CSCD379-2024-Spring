@@ -1,92 +1,33 @@
 <template>
-  <v-dialog
-    v-model="modelValue"
-    max-width="500"
-    style="background-color: thistle"
-  >
   <v-container>
-      <v-card-actions class="justify-center">
-        
-      </v-card-actions>
-    </v-container>
-    <div>
-      <h1 class="pd d-flex justify-center align-center" style="color: white">
-        Howdy Partner!
-      </h1>
-    </div>
     <br /><br />
     <v-container class="d-flex justify-center align-center">
-      <div class="d-flex justify-center align-center">
+      <div class="d-flex justify-center align-center image-container">
         <v-img
           :height="computedImageHeight"
           :width="computedImageWidth"
-          src="/public/CrushPictures/crush.png"
+          src="/CrushPictures/LandingPages/landingPage5.png"
         >
         </v-img>
       </div>
     </v-container>
+    <br /><br /><br /><br />
     <div>
-      <br />
-      <h2 class="pd d-flex justify-center align-center" style="color: white">
-        Click below to start matching!
-      </h2>
-      <v-container>
-        <v-card-actions class="justify-center">
-          <v-btn
-            style="background-color: lightpink"
-            color="white"
-            to="/signIn"
-            class="text-center pd"
-            prepend-icon="mdi-account"
-            title="Sign in"
-          >
-            Sign in
-          </v-btn>
-        </v-card-actions>
-      </v-container>
+      <h1 class="pd d-flex justify-center align-center">YEEHAW!</h1>
     </div>
-    <div ref="girl" class="walking-girl"></div>
-    <div ref="boy" class="walking-boy"></div>
-  </v-dialog>
-
-
+    <v-container>
+      <v-card-actions
+        class="d-flex flex-column flex-md-row justify-center align-center"
+      >
+        <v-btn style="background-color: black" color="secondary" to="/matching">
+          Start Matching
+        </v-btn>
+      </v-card-actions>
+    </v-container>
+    <div ref="character" class="walking-character"></div>
+    <v-divider :width="'100%'"> </v-divider>
+  </v-container>
 </template>
-
-<script>
-import { ref } from "vue";
-import { useRouter } from "vue-router";
-
-const modelValue = ref(true);
-
-export default {
-  setup() {
-    const router = useRouter();
-
-    return {
-      modelValue,
-      router
-    };
-  },
-  mounted() {
-    this.$nextTick(() => {
-      // Check if the character elements exist before accessing them
-      if (this.$refs.girl) {
-        // Add animation class to start the walking animation for the girl
-        this.$refs.girl.classList.add("walk-animation");
-      } else {
-        console.error("Girl character element not found.");
-      }
-
-      if (this.$refs.boy) {
-        // Add animation class to start the walking animation for the boy
-        this.$refs.boy.classList.add("walk-animation-reverse");
-      } else {
-        console.error("Boy character element not found.");
-      }
-    });
-  }
-};
-</script>
 
 <script setup>
 import { ref, computed } from "vue";
