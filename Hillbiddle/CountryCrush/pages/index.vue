@@ -4,11 +4,6 @@
     max-width="500"
     style="background-color: thistle"
   >
-  <v-container>
-      <v-card-actions class="justify-center">
-        
-      </v-card-actions>
-    </v-container>
     <div>
       <h1 class="pd d-flex justify-center align-center" style="color: white">
         Howdy Partner!
