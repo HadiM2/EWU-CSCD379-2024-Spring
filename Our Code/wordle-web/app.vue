@@ -6,14 +6,20 @@
           HillBiddle
           <v-icon @click="router.push('/')"> mdi-greenhouse </v-icon>
         </v-app-bar-title>
-        
+        <v-spacer></v-spacer>
+        <v-btn
+          prepend-icon="mdi-account"
+          title="Sign in"
+          @click="router.push('/signIn')"
+          >Sign In</v-btn
+        >
       </v-app-bar>
-        
+
       <HelpDialog v-model="showHelpDialog" />
 
       <v-navigation-drawer expand-on-hover rail location="right">
-        <v-list class = "bannerSmall" >
-          <v-list-item 
+        <v-list class="bannerSmall">
+          <v-list-item
             prepend-avatar="https://i.ibb.co/kx64H0R/Picture1.jpg"
             subtitle="Webdev"
             title="Cynthia"
@@ -31,6 +37,11 @@
             prepend-icon="mdi-home"
             title="Home"
             @click="router.push('/')"
+          />
+          <v-list-item
+            prepend-icon="mdi-account"
+            title="Sign in"
+            @click="router.push('/signIn')"
           />
           <v-list-item
             prepend-icon="mdi-halloween"
@@ -78,10 +89,14 @@
             title="About"
             @click="router.push('/aboutPage')"
           />
-          
+          <v-list-item
+            prepend-icon="mdi-circle"
+            title="WordEditor"
+            @click="router.push('/WordEditor')"
+          />
         </v-list>
       </v-navigation-drawer>
-      
+
       <!-- Settings Dialog -->
       <v-dialog v-model="settingsDialog" max-width="500">
         <v-card style="outline-style: inset" color="primary">
@@ -165,7 +180,7 @@
           </v-card-text>
         </v-card>
       </v-dialog>
-      
+
       <v-main>
         <NuxtPage />
       </v-main>
@@ -216,6 +231,5 @@ alt="Logo"
 max-width="180"
 max-height="95"
 
-/>*/ 
+/>*/
 </style>
-
