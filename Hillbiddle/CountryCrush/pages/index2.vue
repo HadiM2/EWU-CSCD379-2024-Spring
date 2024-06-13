@@ -1,6 +1,5 @@
 <template>
   <v-container>
-    <br /><br />
     <v-container class="d-flex justify-center align-center">
       <div class="d-flex justify-center align-center image-container">
         <v-img
@@ -11,7 +10,6 @@
         </v-img>
       </div>
     </v-container>
-    <br /><br /><br /><br />
     <div>
       <h1 style="color: white"class="pd d-flex justify-center align-center">YEEHAW!</h1>
     </div>

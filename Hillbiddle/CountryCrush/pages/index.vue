@@ -9,7 +9,6 @@
         Howdy Partner!
       </h1>
     </div>
-    <br /><br />
     <v-container class="d-flex justify-center align-center">
       <div class="d-flex justify-center align-center">
         <v-img

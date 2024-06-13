@@ -102,7 +102,7 @@ function login() {
     snackbar.value.message = `Logged In as ${user.fullName}`;
     nuxtStorage.localStorage.setData("isAuth", true);
     nuxtStorage.localStorage.setData("loggedInUser", user.fullName);
-    router.push('/matching');
+    router.push('/index2');
   } else {
     snackbar.value.message = "Invalid Credentials";
     nuxtStorage.localStorage.setData("isAuth", false);
