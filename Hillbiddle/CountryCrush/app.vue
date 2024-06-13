@@ -24,7 +24,9 @@
           <v-list-item class="pd" prepend-icon="mdi-help-circle" title="About" @click="router.push('/about')" />
           <v-list-item class="pd" prepend-icon="mdi-weather-night" title="Light or Dark" @click="toggleTheme()"/>
           <v-list-item class="pd" prepend-icon="mdi-help" title="Help"  @click="router.push('/help')" />
-          <v-list-item class="pd" prepend-icon="mdi-circle" title="signIn"  @click="router.push('/signIn')" />
+          <v-list-item class="pd" prepend-icon="mdi-account" title="signIn"  @click="router.push('/signIn')" />
+          <v-list-item class="pd" prepend-icon="mdi-heart" title="likedPage"  @click="router.push('/LikedPage')" />
+          <v-list-item class="pd" prepend-icon="mdi-skull" title="dislikedPage"  @click="router.push('/DislikedPage')" />
         </v-list>
       </v-navigation-drawer>
 
@@ -96,7 +98,16 @@ function themeSettings(item: string) {
 }
 
 </script>
-
+<script lang="ts">
+export default {
+  data() {
+    return {
+      likedProfiles: [],
+      dislikedProfiles: []
+    };
+  }
+};
+</script>
 <style>
 .buttonClass {
   display: flex;

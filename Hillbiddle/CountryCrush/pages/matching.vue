@@ -13,8 +13,15 @@
               <div v-if="profile.showPhoneNumber">Phone Number: {{ profile.phoneNumber }}</div>
             </v-card-text>
             <v-card-actions class="justify-center">
-              <v-btn @click="like(index)" color="success"><v-icon>mdi-check</v-icon></v-btn>
-              <v-btn @click="dislike(index)" color="error"><v-icon>mdi-close</v-icon></v-btn>
+              <v-btn @click="togglePhoneNumber(index)" color="info">
+                <v-icon>mdi-phone</v-icon>
+              </v-btn>
+              <v-btn @click="like(index)" color="success">
+                <v-icon>mdi-check</v-icon>
+              </v-btn>
+              <v-btn @click="dislike(index)" color="error">
+                <v-icon>mdi-close</v-icon>
+              </v-btn>
             </v-card-actions>
           </v-card>
         </v-col>
@@ -24,6 +31,9 @@
 </template>
 
 <script>
+import { ref } from 'vue';
+import nuxtStorage from "nuxt-storage";
+import { useRouter } from 'vue-router';
 export default {
   data() {
     return {
@@ -290,14 +300,43 @@ export default {
       ]
     };
   },
+  created() {
+    this.loadProfiles();
+  },
   methods: {
+    togglePhoneNumber(index) {
+      // this.$set(this.profiles[index], 'showPhoneNumber', !this.profiles[index].showPhoneNumber);
+      this.profiles[index].showPhoneNumber = !this.profiles[index].showPhoneNumber;
+    },
     like(index) {
-      // Implement like action here
-      console.log('Liked profile', index);
+      console.log(`Liked profile: ${this.profiles[index].name}`);
+      // Implement further logic for liking a profile
+      // this.likedProfiles.push(this.profiles.splice(index, 1)[0]);
+      const likedProfile = this.profiles.splice(index, 1)[0];
+      this.$root.likedProfiles.push(likedProfile);
+      this.saveProfiles();
     },
     dislike(index) {
-      // Implement dislike action here
-      console.log('Disliked profile', index);
+      console.log(`Disliked profile: ${this.profiles[index].name}`);
+      // Implement further logic for disliking a profile
+      // this.dislikedProfiles.push(this.profiles.splice(index, 1)[0]);
+      const dislikedProfile = this.profiles.splice(index, 1)[0];
+      this.$root.dislikedProfiles.push(dislikedProfile);
+      this.saveProfiles();
+    },
+    saveProfiles() {
+      localStorage.setItem('likedProfiles', JSON.stringify(this.$root.likedProfiles));
+      localStorage.setItem('dislikedProfiles', JSON.stringify(this.$root.dislikedProfiles));
+      localStorage.setItem('profiles', JSON.stringify(this.profiles));
+    },
+    loadProfiles() {
+      const savedLikedProfiles = JSON.parse(localStorage.getItem('likedProfiles'));
+      const savedDislikedProfiles = JSON.parse(localStorage.getItem('dislikedProfiles'));
+      const savedProfiles = JSON.parse(localStorage.getItem('profiles'));
+
+      if (savedLikedProfiles) this.$root.likedProfiles = savedLikedProfiles;
+      if (savedDislikedProfiles) this.$root.dislikedProfiles = savedDislikedProfiles;
+      if (savedProfiles) this.profiles = savedProfiles;
     }
   }
 };
