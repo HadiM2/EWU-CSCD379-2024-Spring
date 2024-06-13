@@ -3,7 +3,7 @@
     <v-card color="secondary">
       <v-sheet color="primary">
         <v-card-text style="text-align: center; font-size: larger">
-          <header>{{ isRegisterMode ? 'Register' : 'Sign In' }}</header>
+          <header class="pd text-center" style="color:white">{{ isRegisterMode ? 'Register' : 'Sign In' }}</header>
         </v-card-text>
       </v-sheet>
       <v-divider />

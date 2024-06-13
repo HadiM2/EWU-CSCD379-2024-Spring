@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Liked Profiles</h1>
+    <h1 class="pd text-center" style="color:white" >Liked Profiles</h1>
     <v-container>
       <v-row>
         <v-col v-for="(profile, index) in likedProfiles" :key="index" cols="12" sm="6" md="4" lg="3">
@@ -29,3 +29,9 @@ export default {
   }
 };
 </script>
+
+<style>
+.pd {
+  font-family: 'PlayfairDisplay';
+}
+ </style>

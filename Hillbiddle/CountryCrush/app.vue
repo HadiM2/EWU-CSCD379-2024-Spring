@@ -20,7 +20,7 @@
           >
         </div>
         <div v-else>
-          <v-btn color="white" @click="router.push('/signIn')">Sign In</v-btn>
+          <v-btn color="white" class="pd text-center" style="color:white" @click="router.push('/signIn')">Sign In</v-btn>
         </div>
       </v-app-bar>
 
