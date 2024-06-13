@@ -36,7 +36,7 @@
           class="text-center pd"
           prepend-icon="mdi-account"
           title="Sign in"
-          @click="router.push('/signIn')"
+          @click="router.push('/sign')"
           >Sign in
         </v-btn>
       </v-card-actions>

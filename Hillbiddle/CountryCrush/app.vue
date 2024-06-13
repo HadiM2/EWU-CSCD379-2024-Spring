@@ -24,6 +24,7 @@
           <v-list-item class="pd" prepend-icon="mdi-help-circle" title="About" @click="router.push('/about')" />
           <v-list-item class="pd" prepend-icon="mdi-weather-night" title="Light or Dark" @click="toggleTheme()"/>
           <v-list-item class="pd" prepend-icon="mdi-help" title="Help"  @click="router.push('/help')" />
+          <v-list-item class="pd" prepend-icon="mdi-circle" title="signIn"  @click="router.push('/signIn')" />
         </v-list>
       </v-navigation-drawer>
 
