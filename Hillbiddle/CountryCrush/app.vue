@@ -85,7 +85,7 @@
           <v-list-item
             class="pd"
             prepend-icon="mdi-heart"
-            title="Home"
+            title="Start Matching!"
             @click="router.push('/index2')"
           />
         </v-list>
