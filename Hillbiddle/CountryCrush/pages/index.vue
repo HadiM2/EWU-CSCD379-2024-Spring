@@ -4,7 +4,6 @@
     max-width="500"
     style="background-color: thistle"
   >
-
     <div>
       <h1 class="pd d-flex justify-center align-center" style="color: white">
         Howdy Partner!
@@ -26,64 +25,70 @@
       <h2 class="pd d-flex justify-center align-center" style="color: white">
         Click below to start matching!
       </h2>
+      <v-container>
+        <v-card-actions class="justify-center">
+          <v-btn
+            style="background-color: lightpink"
+            color="white"
+            to="/signIn"
+            class="text-center pd"
+            prepend-icon="mdi-account"
+            title="Sign in"
+          >
+            Sign in
+          </v-btn>
+        </v-card-actions>
+      </v-container>
     </div>
-    <v-container>
-      <v-card-actions class="justify-center">
-        <v-btn
-          style="background-color: lightpink"
-          color="white"
-          to="/matching"
-          class="text-center pd"
-          prepend-icon="mdi-account"
-          title="Sign in"
-          @click="router.push('/signIn')"
-          >Sign in
-        </v-btn>
-      </v-card-actions>
-    </v-container>
     <div ref="girl" class="walking-girl"></div>
     <div ref="boy" class="walking-boy"></div>
   </v-dialog>
 
-  
   <v-container>
-  <br /><br />
-  <v-container class="d-flex justify-center align-center;">
-    <div class="d-flex justify-center align-center; image-container">
-      <v-img
-        :height="computedImageHeight"
-        :width="computedImageWidth"
-        src="/CrushPictures/LandingPages/landingPage5.png"
-      >
-      </v-img>
+    <br /><br />
+    <v-container class="d-flex justify-center align-center">
+      <div class="d-flex justify-center align-center image-container">
+        <v-img
+          :height="computedImageHeight"
+          :width="computedImageWidth"
+          src="/CrushPictures/LandingPages/landingPage5.png"
+        >
+        </v-img>
+      </div>
+    </v-container>
+    <br /><br /><br /><br />
+    <div>
+      <h1 class="pd d-flex justify-center align-center">YEEHAW!</h1>
     </div>
-  </v-container>
-  <br /><br /><br /><br />
-  <div>
-    <h1 class="pd d-flex justify-center align-center">YEEHAW!</h1>
-  </div>
-  <v-container>
-    <v-card-actions
-      class="d-flex flex-column flex-md-row justify-center align-center"
-    >
-      <v-btn style="background-color: black" color="secondary" to="/matching"
-        >Start Matching</v-btn
+    <v-container>
+      <v-card-actions
+        class="d-flex flex-column flex-md-row justify-center align-center"
       >
-    </v-card-actions>
+        <v-btn style="background-color: black" color="secondary" to="/matching">
+          Start Matching
+        </v-btn>
+      </v-card-actions>
+    </v-container>
+    <div ref="character" class="walking-character"></div>
+    <v-divider :width="'100%'"> </v-divider>
   </v-container>
-  <div ref="character" class="walking-character"></div>
-  <v-divider :width="'100%'"> </v-divider>
-</v-container>
 </template>
 
 <script>
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 
-const router = useRouter();
 const modelValue = ref(true);
 
 export default {
+  setup() {
+    const router = useRouter();
+
+    return {
+      modelValue,
+      router
+    };
+  },
   mounted() {
     this.$nextTick(() => {
       // Check if the character elements exist before accessing them
@@ -101,7 +106,7 @@ export default {
         console.error("Boy character element not found.");
       }
     });
-  },
+  }
 };
 </script>
 
