@@ -87,8 +87,13 @@ const snackbar = ref({ show: false, message: '' });
 const isRegisterMode = ref<boolean>(false);
 const router = useRouter();
 
-const staticEmail = 'admin@masterOfUniverse.com';
-const staticPassword = '1234';
+const staticFemale = 'Whitney'
+const staticEmail = 'whitney@lovefinder.com';
+const staticPassword = 'iloveoveralls';
+
+const staticMale = 'Billy'
+const staticEmail2 = 'billy@lovefinder.com';
+const staticPassword2 = 'ilovecorn';
 
 function toggleMode() {
   isRegisterMode.value = !isRegisterMode.value;
@@ -96,7 +101,7 @@ function toggleMode() {
 
 function login() {
   if (email.value && password.value) {
-    if (email.value === staticEmail && password.value === staticPassword) {
+    if (email.value === staticEmail && password.value === staticPassword || email.value === staticEmail2 && password.value === staticPassword2) {
       snackbar.value.message = "Logged In";
       nuxtStorage.localStorage.setData("isAuth", true);
       router.push('/matching');
