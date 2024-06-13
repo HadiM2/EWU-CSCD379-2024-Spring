@@ -4,6 +4,19 @@
     max-width="500"
     style="background-color: thistle"
   >
+  <v-container>
+      <v-card-actions class="justify-center">
+        <v-btn
+          style="background-color: lightpink"
+          color="white"
+          class="text-center pd"
+          prepend-icon="mdi-close"
+          title="Close"
+          @click="modelValue = false"
+          >Close
+        </v-btn>
+      </v-card-actions>
+    </v-container>
     <div>
       <h1 class="pd d-flex justify-center align-center" style="color: white">
         Howdy Partner!
