@@ -87,38 +87,35 @@ const snackbar = ref({ show: false, message: '' });
 const isRegisterMode = ref<boolean>(false);
 const router = useRouter();
 
-const staticFemale = 'Whitney'
-const staticEmail = 'whitney@lovefinder.com';
-const staticPassword = 'iloveoveralls';
-
-const staticMale = 'Billy'
-const staticEmail2 = 'billy@lovefinder.com';
-const staticPassword2 = 'ilovecorn';
+const users = [
+  { fullName: 'Whitney', email: 'whitney@lovefinder.com', password: 'iloveoveralls' },
+  { fullName: 'Billy', email: 'billy@lovefinder.com', password: 'ilovecorn' }
+];
 
 function toggleMode() {
   isRegisterMode.value = !isRegisterMode.value;
 }
 
 function login() {
-  if (email.value && password.value) {
-    if (email.value === staticEmail && password.value === staticPassword || email.value === staticEmail2 && password.value === staticPassword2) {
-      snackbar.value.message = "Logged In";
-      nuxtStorage.localStorage.setData("isAuth", true);
-      router.push('/matching');
-    } else {
-      snackbar.value.message = "Invalid Credentials";
-      nuxtStorage.localStorage.setData("isAuth", false);
-    }
+  const user = users.find(u => u.email === email.value && u.password === password.value);
+  if (user) {
+    snackbar.value.message = `Logged In as ${user.fullName}`;
+    nuxtStorage.localStorage.setData("isAuth", true);
+    nuxtStorage.localStorage.setData("loggedInUser", user.fullName);
+    router.push('/matching');
   } else {
-    snackbar.value.message = "Fields can't be empty";
+    snackbar.value.message = "Invalid Credentials";
+    nuxtStorage.localStorage.setData("isAuth", false);
   }
   snackbar.value.show = true;
 }
+
 
 function register() {
   if (fullName.value && email.value && password.value) {
     snackbar.value.message = 'Registered Successfully';
     nuxtStorage.localStorage.setData('user', { fullName: fullName.value, email: email.value, password: password.value });
+    nuxtStorage.localStorage.setData('loggedInUser', fullName.value);
     toggleMode(); // Switch to sign-in mode after registration
   } else {
     snackbar.value.message = "Fields can't be empty";
